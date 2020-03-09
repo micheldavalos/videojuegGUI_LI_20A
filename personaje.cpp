@@ -10,7 +10,7 @@ void Personaje::setNombre(string n)
     nombre = n;
 }
 
-string Personaje::getNombre()
+string Personaje::getNombre() const
 {
     return nombre;
 }

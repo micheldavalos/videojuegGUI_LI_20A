@@ -26,9 +26,9 @@ void Videojuego::mostrar()
     }
 }
 
-void Videojuego::respaldar()
+void Videojuego::respaldar(const string &ubicacion)
 {
-    fstream archivo("personajes.txt", ios::out);
+    fstream archivo(ubicacion, ios::out);
 
     if (archivo.is_open()) {
         for (size_t i = 0; i < arreglo.size(); i++) {
@@ -42,9 +42,9 @@ void Videojuego::respaldar()
     }
 }
 
-void Videojuego::recuperar()
+void Videojuego::recuperar(const string &ubicacion)
 {
-    fstream archivo("personajes.txt", ios::in);
+    fstream archivo(ubicacion, ios::in);
     if (archivo.is_open()) {
         while (!archivo.eof()) {
             string linea;

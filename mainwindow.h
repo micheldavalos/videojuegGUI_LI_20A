@@ -23,8 +23,14 @@ private slots:
 
     void on_actionGuardar_triggered();
 
+    void on_actionAbrir_triggered();
+
+    void click_mostrar_tabla();
+
 private:
     Ui::MainWindow *ui;
     Videojuego v;
+
+    void personajes_tabla(const vector<Personaje> &personajes);
 };
 #endif // MAINWINDOW_H

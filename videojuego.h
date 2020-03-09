@@ -12,8 +12,8 @@ public:
     Videojuego();
     void agregar(const Personaje &p);
     void mostrar();
-    void respaldar();
-    void recuperar();
+    void respaldar(const string &ubicacion);
+    void recuperar(const string &ubicacion);
     size_t size()
     {
         return arreglo.size();
@@ -24,6 +24,11 @@ public:
     void eliminar(size_t p);
     void ordenar();
     Personaje *buscar(const Personaje &p);
+
+    Personaje& operator[](size_t p)
+    {
+        return arreglo[p];
+    }
 
 };
 

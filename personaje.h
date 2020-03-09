@@ -10,7 +10,7 @@ class Personaje
 public:
     Personaje();
     void setNombre(string n);
-    string getNombre();
+    string getNombre() const;
 
     string getTipo() const;
     void setTipo(const string &value);
