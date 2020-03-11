@@ -27,6 +27,18 @@ private slots:
 
     void click_mostrar_tabla();
 
+    void on_buscar_clicked();
+
+    void on_actionNombre_triggered();
+
+    void on_actionTipo_triggered();
+
+    void on_actionSalud_triggered();
+
+    void on_actionFuerza_triggered();
+
+    void on_crear_clicked();
+
 private:
     Ui::MainWindow *ui;
     Videojuego v;

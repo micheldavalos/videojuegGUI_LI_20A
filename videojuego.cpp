@@ -92,6 +92,21 @@ void Videojuego::ordenar()
     sort(arreglo.begin(), arreglo.end());
 }
 
+void Videojuego::ordenar_tipo()
+{
+    sort(arreglo.begin(), arreglo.end(), [](const Personaje &a, const Personaje &b){return a.getTipo() < b.getTipo();});
+}
+
+void Videojuego::ordenar_salud()
+{
+sort(arreglo.begin(), arreglo.end(), [](const Personaje &a, const Personaje &b){return a.getSalud() < b.getSalud();});
+}
+
+void Videojuego::ordenar_fuerza()
+{
+sort(arreglo.begin(), arreglo.end(), [](const Personaje &a, const Personaje &b){return a.getFuerza() < b.getFuerza();});
+}
+
 Personaje* Videojuego::buscar(const Personaje &p)
 {
     auto it = find(arreglo.begin(), arreglo.end(), p);

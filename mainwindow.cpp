@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QFileDialog>
 #include <QTableWidgetItem>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -136,4 +137,63 @@ void MainWindow::personajes_tabla(const vector<Personaje> &personajes)
     }
 
 
+}
+
+void MainWindow::on_buscar_clicked()
+{
+    QString texto = ui->lineEdit_buscar->text();
+
+    Personaje p;
+    p.setNombre(texto.toStdString());
+
+    Personaje *ptr = v.buscar(p);
+
+    if (ptr == nullptr) {
+        // no se encontro
+        QMessageBox::warning(this, "Buscar", "No existe personaje con el nombre: " + texto);
+    }
+    else {
+        vector<Personaje> personajes = {*ptr};
+        personajes_tabla(personajes);
+    }
+}
+
+void MainWindow::on_actionNombre_triggered()
+{
+    v.ordenar();
+}
+
+void MainWindow::on_actionTipo_triggered()
+{
+    v.ordenar_tipo();
+}
+
+void MainWindow::on_actionSalud_triggered()
+{
+    v.ordenar_salud();
+}
+
+void MainWindow::on_actionFuerza_triggered()
+{
+    v.ordenar_fuerza();
+}
+
+void MainWindow::on_crear_clicked()
+{
+    QString nombre = ui->nombre->text();
+    QString tipo = ui->tipo->text();
+    int fuerza = ui->fuerza->value();
+    int salud = ui->salud->value();
+
+    qDebug() << nombre << tipo << fuerza << salud;
+
+    Personaje p;
+    p.setNombre(nombre.toStdString());
+    p.setTipo(tipo.toStdString());
+    p.setFuerza(fuerza);
+    p.setSalud(salud);
+
+    size_t n = size_t(ui->n->value());
+
+    v.inicializar(p, n);
 }

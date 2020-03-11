@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>521</width>
-    <height>314</height>
+    <height>346</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,56 +18,15 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
         <string>Agregar</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Nombre:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QPushButton" name="agregar">
-          <property name="text">
-           <string>Agregar</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QSpinBox" name="salud">
-          <property name="maximum">
-           <number>100</number>
-          </property>
-          <property name="value">
-           <number>100</number>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="1">
          <widget class="QLineEdit" name="nombre"/>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Tipo:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="tipo"/>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Salud:</string>
-          </property>
-         </widget>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_3">
@@ -86,6 +45,33 @@
           </property>
          </widget>
         </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Tipo:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Nombre:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="tipo"/>
+        </item>
+        <item row="3" column="1">
+         <widget class="QSpinBox" name="salud">
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>100</number>
+          </property>
+         </widget>
+        </item>
         <item row="4" column="1">
          <widget class="QPushButton" name="mostrar">
           <property name="text">
@@ -93,7 +79,47 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="2" rowspan="5">
+        <item row="4" column="0">
+         <widget class="QPushButton" name="agregar">
+          <property name="text">
+           <string>Agregar</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Salud:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0" colspan="2">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Inicializar</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QSpinBox" name="n">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>1000000</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="crear">
+             <property name="text">
+              <string>Crear</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2" rowspan="6">
          <widget class="QPlainTextEdit" name="salida"/>
         </item>
        </layout>
@@ -153,7 +179,17 @@
     <addaction name="actionAbrir"/>
     <addaction name="actionGuardar"/>
    </widget>
+   <widget class="QMenu" name="menuOrdenar">
+    <property name="title">
+     <string>Ordenar</string>
+    </property>
+    <addaction name="actionNombre"/>
+    <addaction name="actionTipo"/>
+    <addaction name="actionSalud"/>
+    <addaction name="actionFuerza"/>
+   </widget>
    <addaction name="menuArchivo"/>
+   <addaction name="menuOrdenar"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionAbrir">
@@ -170,6 +206,26 @@
    </property>
    <property name="shortcut">
     <string>Meta+S</string>
+   </property>
+  </action>
+  <action name="actionNombre">
+   <property name="text">
+    <string>Nombre</string>
+   </property>
+  </action>
+  <action name="actionTipo">
+   <property name="text">
+    <string>Tipo</string>
+   </property>
+  </action>
+  <action name="actionSalud">
+   <property name="text">
+    <string>Salud</string>
+   </property>
+  </action>
+  <action name="actionFuerza">
+   <property name="text">
+    <string>Fuerza</string>
    </property>
   </action>
  </widget>
